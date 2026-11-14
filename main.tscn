@@ -1,0 +1,40 @@
+[gd_scene format=3 uid="uid://m63iveejh8td"]
+
+[ext_resource type="Texture2D" uid="uid://dptlktrnb51x0" path="res://wizard-fantasy-pixel-art-game-cartoon-character-blue-video-sprite-style-squares-wide-high-412403805-removebg-preview.png" id="1_0xm2m"]
+[ext_resource type="Texture2D" uid="uid://de7rd848uv7c5" path="res://bit-game-style-spring-summer-night-forest-horizontal-background-307639971.webp" id="1_1bvp3"]
+[ext_resource type="Script" uid="uid://bnbb87s220jm5" path="res://player.gd" id="1_h2yge"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_v2gey"]
+size = Vector2(130.5, 192.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ferpu"]
+size = Vector2(1155.5, 12.5)
+
+[node name="Node2D" type="Node2D" unique_id=2137997239]
+
+[node name="Background" type="TextureRect" parent="." unique_id=1966039750]
+offset_right = 1152.0
+offset_bottom = 648.0
+texture = ExtResource("1_1bvp3")
+
+[node name="Area2D" type="Area2D" parent="." unique_id=1350714764]
+
+[node name="BGChangeZone" type="CollisionShape2D" parent="Area2D" unique_id=2076754328]
+
+[node name="Player" type="CharacterBody2D" parent="." unique_id=2054177801]
+script = ExtResource("1_h2yge")
+
+[node name="Sprite2D" type="Sprite2D" parent="Player" unique_id=966479740]
+position = Vector2(68.250015, 556.625)
+scale = Vector2(0.31635073, 0.3506768)
+texture = ExtResource("1_0xm2m")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Player" unique_id=1096082645]
+position = Vector2(64.75, 556.25)
+shape = SubResource("RectangleShape2D_v2gey")
+
+[node name="Ground" type="StaticBody2D" parent="." unique_id=1274257332]
+
+[node name="GroundBarrier" type="CollisionShape2D" parent="Ground" unique_id=1930204493]
+position = Vector2(579.25, 646.75)
+shape = SubResource("RectangleShape2D_ferpu")
