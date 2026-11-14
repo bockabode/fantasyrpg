@@ -6,6 +6,6 @@ story could be about finding some lost treasure
 List of biomes and animals:  
 Rainforest - Ants, Frogs, Jaguars, Toucans  
 Desert - Camel, Fox, Snake, Roadrunner, Scorpion  
-Temperate Forest - Deer, Bear, Fox, Owl
+Temperate Forest - Deer, Bear, Fox, Owl  
 Tundra - Polar bear, Arctic fox, Snowy Owl  
 Ocean - Dolphin, Turtle, Fish  
