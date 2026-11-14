@@ -5,11 +5,7 @@ story could be about finding some lost treasure
 
 List of biomes and animals:  
 Rainforest - Ants, Frogs, Jaguars, Toucans  
-Savanna - Lion, Zebra, Cheetah, Elephant  
 Desert - Camel, Fox, Snake, Roadrunner, Scorpion  
-Grassland - Bison, Coyote, Badger, Rabbit  
-Temperate Forest - Deer, Bear, Fox, Owl  
-Cold Forest - Moose, Wolf, Hares, Snowy Owl  
+Temperate Forest - Deer, Bear, Fox, Owl
 Tundra - Polar bear, Arctic fox, Snowy Owl  
-River - Fish, Frog, Alligator, Otter, Beaver  
 Ocean - Dolphin, Turtle, Fish  
