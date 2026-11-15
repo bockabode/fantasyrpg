@@ -2,24 +2,59 @@
 
 [ext_resource type="Texture2D" uid="uid://de7rd848uv7c5" path="res://bit-game-style-spring-summer-night-forest-horizontal-background-307639971.webp" id="1_2rvgm"]
 [ext_resource type="Script" uid="uid://bnbb87s220jm5" path="res://player.gd" id="2_05d0c"]
+[ext_resource type="Texture2D" uid="uid://chns153sywbjg" path="res://parallax-forest-preview.png" id="2_qhy6t"]
+[ext_resource type="Script" uid="uid://cw6fqhancpljj" path="res://left_area.gd" id="3_djtf0"]
 [ext_resource type="Texture2D" uid="uid://dptlktrnb51x0" path="res://wizard-fantasy-pixel-art-game-cartoon-character-blue-video-sprite-style-squares-wide-high-412403805-removebg-preview.png" id="3_qhy6t"]
+[ext_resource type="Script" uid="uid://dt660ew3jde8o" path="res://bg_change.gd" id="4_djtf0"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_16ogj"]
+size = Vector2(5, 584)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_m6fhb"]
+size = Vector2(6, 653.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qhy6t"]
+size = Vector2(10, 648)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_v2gey"]
-size = Vector2(130.5, 192.5)
+size = Vector2(36.5, 192.5)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ferpu"]
 size = Vector2(1155.5, 12.5)
 
 [node name="Node2D" type="Node2D" unique_id=2137997239]
 
-[node name="Background" type="TextureRect" parent="." unique_id=1966039750]
+[node name="LeftWall" type="StaticBody2D" parent="." unique_id=821669452]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="LeftWall" unique_id=738230535]
+position = Vector2(-6.5, 302)
+shape = SubResource("RectangleShape2D_16ogj")
+
+[node name="Background1" type="TextureRect" parent="." unique_id=1966039750]
 offset_right = 1152.0
 offset_bottom = 648.0
 texture = ExtResource("1_2rvgm")
 
-[node name="Area2D" type="Area2D" parent="." unique_id=1350714764]
+[node name="Background2" type="TextureRect" parent="." unique_id=1844803355]
+visible = false
+custom_minimum_size = Vector2(1152, 648)
+offset_right = 1158.0
+offset_bottom = 648.0
+texture = ExtResource("2_qhy6t")
 
-[node name="BGChangeZone" type="CollisionShape2D" parent="Area2D" unique_id=2076754328]
+[node name="Area2L" type="Area2D" parent="." unique_id=1350714764]
+script = ExtResource("3_djtf0")
+
+[node name="BGChangeZone" type="CollisionShape2D" parent="Area2L" unique_id=2076754328]
+position = Vector2(0, 325)
+shape = SubResource("RectangleShape2D_m6fhb")
+
+[node name="AreaRD" type="Area2D" parent="." unique_id=1616967563]
+script = ExtResource("4_djtf0")
+
+[node name="BGChangeZone" type="CollisionShape2D" parent="AreaRD" unique_id=1055923673]
+position = Vector2(1156, 325)
+shape = SubResource("RectangleShape2D_qhy6t")
 
 [node name="Player" type="CharacterBody2D" parent="." unique_id=2054177801]
 script = ExtResource("2_05d0c")
@@ -30,7 +65,7 @@ scale = Vector2(0.31635073, 0.3506768)
 texture = ExtResource("3_qhy6t")
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="Player" unique_id=1096082645]
-position = Vector2(64.75, 556.25)
+position = Vector2(28, 542)
 shape = SubResource("RectangleShape2D_v2gey")
 
 [node name="Ground" type="StaticBody2D" parent="." unique_id=1274257332]
@@ -38,3 +73,6 @@ shape = SubResource("RectangleShape2D_v2gey")
 [node name="GroundBarrier" type="CollisionShape2D" parent="Ground" unique_id=1930204493]
 position = Vector2(579.25, 646.75)
 shape = SubResource("RectangleShape2D_ferpu")
+
+[connection signal="body_entered" from="Area2L" to="Area2L" method="_on_body_entered"]
+[connection signal="body_entered" from="AreaRD" to="AreaRD" method="_on_body_entered"]

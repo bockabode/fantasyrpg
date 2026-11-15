@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://m63iveejh8td"]
 
 [ext_resource type="Texture2D" uid="uid://dptlktrnb51x0" path="res://wizard-fantasy-pixel-art-game-cartoon-character-blue-video-sprite-style-squares-wide-high-412403805-removebg-preview.png" id="1_0xm2m"]
-[ext_resource type="Texture2D" uid="uid://dynjgkme0usx7" path="res://forest_back.png" id="1_1bvp3"]
+[ext_resource type="Texture2D" uid="uid://de7rd848uv7c5" path="res://bit-game-style-spring-summer-night-forest-horizontal-background-307639971.webp" id="1_1bvp3"]
 [ext_resource type="Script" uid="uid://bnbb87s220jm5" path="res://player.gd" id="1_h2yge"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_v2gey"]
