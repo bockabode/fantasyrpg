@@ -11,7 +11,7 @@
 size = Vector2(17, 622)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_v2gey"]
-size = Vector2(59.25, 57)
+size = Vector2(59.25, 50)
 
 [sub_resource type="TileSet" id="TileSet_qhy6t"]
 
@@ -64,7 +64,7 @@ scale = Vector2(1.3910232, 1.4321624)
 texture = ExtResource("5_djtf0")
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="Player" unique_id=1096082645]
-position = Vector2(64, 431.5)
+position = Vector2(64, 435)
 shape = SubResource("RectangleShape2D_v2gey")
 
 [node name="Camera2D" type="Camera2D" parent="Player" unique_id=1708226540]
