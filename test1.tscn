@@ -2,6 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://dynjgkme0usx7" path="res://forest_back.png" id="1_djtf0"]
 [ext_resource type="Script" uid="uid://bnbb87s220jm5" path="res://player.gd" id="2_05d0c"]
+[ext_resource type="Texture2D" uid="uid://dtrhii80ck1b6" path="res://forest_midback.png" id="2_djtf0"]
 [ext_resource type="Texture2D" uid="uid://bdus1stg8yp4o" path="res://forest_mid.png" id="2_qhy6t"]
 [ext_resource type="Texture2D" uid="uid://dptlktrnb51x0" path="res://wizard-fantasy-pixel-art-game-cartoon-character-blue-video-sprite-style-squares-wide-high-412403805-removebg-preview.png" id="3_qhy6t"]
 
@@ -36,6 +37,14 @@ offset_right = 1152.0
 offset_bottom = 648.0
 texture = ExtResource("1_djtf0")
 
+[node name="Parallax2D3" type="Parallax2D" parent="." unique_id=2070084799]
+scroll_scale = Vector2(0.25, 0.25)
+
+[node name="Background1" type="TextureRect" parent="Parallax2D3" unique_id=434453860]
+offset_right = 1152.0
+offset_bottom = 648.0
+texture = ExtResource("2_djtf0")
+
 [node name="Parallax2D2" type="Parallax2D" parent="." unique_id=1723179074]
 scroll_scale = Vector2(0.5, 0.5)
 
@@ -48,9 +57,9 @@ texture = ExtResource("2_qhy6t")
 [node name="Player" type="CharacterBody2D" parent="." unique_id=2054177801]
 script = ExtResource("2_05d0c")
 
-[node name="Sprite2D" type="Sprite2D" parent="Player" unique_id=966479740]
-position = Vector2(68.250015, 556.625)
-scale = Vector2(0.31635073, 0.3506768)
+[node name="Sprite2D" type="Sprite2D" parent="Player" unique_id=1608572341]
+position = Vector2(74, 522)
+scale = Vector2(0.34952608, 0.422906)
 texture = ExtResource("3_qhy6t")
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="Player" unique_id=1096082645]
