@@ -13,9 +13,6 @@ size = Vector2(17, 622)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_v2gey"]
 size = Vector2(59.25, 59)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_ferpu"]
-size = Vector2(3450.5, 14.5)
-
 [sub_resource type="TileSet" id="TileSet_qhy6t"]
 
 [node name="Node2D" type="Node2D" unique_id=2137997239]
@@ -75,12 +72,6 @@ limit_left = 0
 limit_top = 0
 limit_right = 3516
 limit_bottom = 948
-
-[node name="Ground" type="StaticBody2D" parent="." unique_id=1274257332]
-
-[node name="GroundBarrier" type="CollisionShape2D" parent="Ground" unique_id=1930204493]
-position = Vector2(1727, 653)
-shape = SubResource("RectangleShape2D_ferpu")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1868365660]
 texture_filter = 1
