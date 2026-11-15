@@ -6,12 +6,43 @@
 [ext_resource type="Texture2D" uid="uid://bdus1stg8yp4o" path="res://forest_mid.png" id="2_qhy6t"]
 [ext_resource type="Texture2D" uid="uid://dythj5xula0vw" path="res://fox1.png" id="5_djtf0"]
 [ext_resource type="Texture2D" uid="uid://c24073hcke3c8" path="res://forest level.png" id="6_djtf0"]
+[ext_resource type="Texture2D" uid="uid://k2mfva7rr42v" path="res://fox2.png" id="6_ythwj"]
+[ext_resource type="Texture2D" uid="uid://bkx7k4i7tfsq0" path="res://fox3.png" id="7_kibeh"]
+[ext_resource type="Texture2D" uid="uid://cmnyquevta34a" path="res://fox4.png" id="8_r3xjt"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_16ogj"]
 size = Vector2(17, 622)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_v2gey"]
 size = Vector2(59.25, 50)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_62kjy"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("5_djtf0")
+}],
+"loop": 1,
+"name": &"idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("5_djtf0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_ythwj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_kibeh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_r3xjt")
+}],
+"loop": 1,
+"name": &"run",
+"speed": 4.0
+}]
 
 [sub_resource type="TileSet" id="TileSet_qhy6t"]
 
@@ -57,14 +88,8 @@ texture = ExtResource("2_qhy6t")
 [node name="Player" type="CharacterBody2D" parent="." unique_id=2054177801]
 script = ExtResource("2_05d0c")
 
-[node name="Sprite2D" type="Sprite2D" parent="Player" unique_id=1608572341]
-texture_filter = 1
-position = Vector2(67, 432)
-scale = Vector2(1.3910232, 1.4321624)
-texture = ExtResource("5_djtf0")
-
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="Player" unique_id=1096082645]
-position = Vector2(64, 435)
+position = Vector2(64, 430)
 shape = SubResource("RectangleShape2D_v2gey")
 
 [node name="Camera2D" type="Camera2D" parent="Player" unique_id=1708226540]
@@ -72,6 +97,13 @@ limit_left = 0
 limit_top = 0
 limit_right = 3516
 limit_bottom = 648
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Player" unique_id=507520065]
+texture_filter = 1
+position = Vector2(33, 406)
+sprite_frames = SubResource("SpriteFrames_62kjy")
+animation = &"run"
+centered = false
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1868365660]
 texture_filter = 1
