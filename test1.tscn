@@ -4,16 +4,19 @@
 [ext_resource type="Script" uid="uid://bnbb87s220jm5" path="res://player.gd" id="2_05d0c"]
 [ext_resource type="Texture2D" uid="uid://dtrhii80ck1b6" path="res://forest_midback.png" id="2_djtf0"]
 [ext_resource type="Texture2D" uid="uid://bdus1stg8yp4o" path="res://forest_mid.png" id="2_qhy6t"]
-[ext_resource type="Texture2D" uid="uid://dptlktrnb51x0" path="res://wizard-fantasy-pixel-art-game-cartoon-character-blue-video-sprite-style-squares-wide-high-412403805-removebg-preview.png" id="3_qhy6t"]
+[ext_resource type="Texture2D" uid="uid://dythj5xula0vw" path="res://fox1.png" id="5_djtf0"]
+[ext_resource type="Texture2D" uid="uid://c24073hcke3c8" path="res://forest level.png" id="6_djtf0"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_16ogj"]
 size = Vector2(17, 622)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_v2gey"]
-size = Vector2(59.25, 192.5)
+size = Vector2(59.25, 59)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ferpu"]
 size = Vector2(3450.5, 14.5)
+
+[sub_resource type="TileSet" id="TileSet_qhy6t"]
 
 [node name="Node2D" type="Node2D" unique_id=2137997239]
 
@@ -58,12 +61,13 @@ texture = ExtResource("2_qhy6t")
 script = ExtResource("2_05d0c")
 
 [node name="Sprite2D" type="Sprite2D" parent="Player" unique_id=1608572341]
-position = Vector2(74, 522)
-scale = Vector2(0.34952608, 0.422906)
-texture = ExtResource("3_qhy6t")
+texture_filter = 1
+position = Vector2(66.99998, 416)
+scale = Vector2(2.0007958, 2.0518243)
+texture = ExtResource("5_djtf0")
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="Player" unique_id=1096082645]
-position = Vector2(62.375, 543)
+position = Vector2(62.375, 429.5)
 shape = SubResource("RectangleShape2D_v2gey")
 
 [node name="Camera2D" type="Camera2D" parent="Player" unique_id=1708226540]
@@ -78,4 +82,27 @@ limit_bottom = 948
 position = Vector2(1727, 653)
 shape = SubResource("RectangleShape2D_ferpu")
 
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1868365660]
+texture_filter = 1
+texture = ExtResource("6_djtf0")
+centered = false
+
 [node name="TileMapLayer" type="TileMapLayer" parent="." unique_id=1817095967]
+tile_set = SubResource("TileSet_qhy6t")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=589345713]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D" unique_id=892442053]
+polygon = PackedVector2Array(377, 460, 1, 460, 1, 647, 378, 647)
+
+[node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="StaticBody2D" unique_id=1694707626]
+polygon = PackedVector2Array(441, 396, 442, 646, 631, 647, 629, 393)
+
+[node name="CollisionPolygon2D3" type="CollisionPolygon2D" parent="StaticBody2D" unique_id=309852715]
+polygon = PackedVector2Array(696, 396, 820, 396, 820, 329, 1010, 332, 1007, 649, 695, 646)
+
+[node name="CollisionPolygon2D4" type="CollisionPolygon2D" parent="StaticBody2D" unique_id=472830442]
+polygon = PackedVector2Array(1063, 332, 1065, 455, 1124, 457, 1126, 652, 1377, 647, 1378, 268, 1247, 270, 1252, 335, 1187, 332, 1187, 396, 1124, 398, 1126, 331)
+
+[node name="CollisionPolygon2D5" type="CollisionPolygon2D" parent="StaticBody2D" unique_id=1814303454]
+polygon = PackedVector2Array(1254, 145, 1252, 204, 1502, 206, 1502, 144)
