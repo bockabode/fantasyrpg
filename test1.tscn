@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://bdus1stg8yp4o" path="res://forest_mid.png" id="2_qhy6t"]
 [ext_resource type="Texture2D" uid="uid://dythj5xula0vw" path="res://fox1.png" id="5_djtf0"]
 [ext_resource type="Texture2D" uid="uid://c24073hcke3c8" path="res://forest level.png" id="6_djtf0"]
+[ext_resource type="Script" uid="uid://c8ur7k0hmblim" path="res://worldboundary.gd" id="7_tv86p"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_16ogj"]
 size = Vector2(17, 622)
@@ -14,6 +15,9 @@ size = Vector2(17, 622)
 size = Vector2(59.25, 57)
 
 [sub_resource type="TileSet" id="TileSet_qhy6t"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ahet1"]
+size = Vector2(3454, 17)
 
 [node name="Node2D" type="Node2D" unique_id=2137997239]
 
@@ -124,6 +128,7 @@ polygon = PackedVector2Array(2322, 648, 2450, 649, 2448, 424, 2512, 423, 2514, 2
 polygon = PackedVector2Array(2196, 296, 2257, 296, 2257, 350, 2196, 350)
 
 [node name="CollisionPolygon2D15" type="CollisionPolygon2D" parent="StaticBody2D" unique_id=372116394]
+position = Vector2(0, -6)
 polygon = PackedVector2Array(3194, 404, 3016, 404, 3016, 362, 3196, 363)
 
 [node name="CollisionPolygon2D16" type="CollisionPolygon2D" parent="StaticBody2D" unique_id=859580202]
@@ -140,3 +145,12 @@ polygon = PackedVector2Array(2704, 358, 2760, 358, 2764, 416, 2951, 423, 2951, 6
 
 [node name="CollisionPolygon2D19" type="CollisionPolygon2D" parent="StaticBody2D" unique_id=1755896941]
 polygon = PackedVector2Array(3017, 646, 3456, 644, 3456, 234, 3330, 234, 3328, 291, 3271, 298, 3271, 342, 3331, 344, 3331, 421, 3268, 421, 3264, 455, 3204, 457, 3203, 524, 3143, 522, 3143, 587, 3021, 587)
+
+[node name="Worldboundary" type="Area2D" parent="." unique_id=347052659]
+script = ExtResource("7_tv86p")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Worldboundary" unique_id=2080542305]
+position = Vector2(1736, 652)
+shape = SubResource("RectangleShape2D_ahet1")
+
+[connection signal="body_entered" from="Worldboundary" to="Worldboundary" method="_on_body_entered"]
