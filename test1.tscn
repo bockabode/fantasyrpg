@@ -8,14 +8,18 @@
 [ext_resource type="Texture2D" uid="uid://c24073hcke3c8" path="res://forest level.png" id="6_djtf0"]
 [ext_resource type="Texture2D" uid="uid://k2mfva7rr42v" path="res://fox2.png" id="6_ythwj"]
 [ext_resource type="Texture2D" uid="uid://bkx7k4i7tfsq0" path="res://fox3.png" id="7_kibeh"]
-[ext_resource type="Script" uid="uid://c8ur7k0hmblim" path="res://worldboundary.gd" id="7_tv86p"]
 [ext_resource type="Texture2D" uid="uid://cmnyquevta34a" path="res://fox4.png" id="8_r3xjt"]
+[ext_resource type="Script" uid="uid://c6iip8wf2ho26" path="res://word_boundary_reset.gd" id="10_7dp4h"]
 [ext_resource type="Script" uid="uid://d3itlsngvi4no" path="res://area_2d.gd" id="11_r3xjt"]
 [ext_resource type="Texture2D" uid="uid://b5e3vus8aiihj" path="res://arrow.png" id="12_kupnr"]
 [ext_resource type="Script" uid="uid://h6py7ls3rsf2" path="res://goal_arrow.gd" id="13_7dp4h"]
+[ext_resource type="Script" uid="uid://bqdrvrvwbarrt" path="res://static_body_2d.gd" id="13_pbexi"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_16ogj"]
 size = Vector2(17, 622)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_62kjy"]
+size = Vector2(432.5, 55)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_v2gey"]
 size = Vector2(59.25, 50)
@@ -52,9 +56,6 @@ animations = [{
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ahet1"]
 size = Vector2(3076, 17)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_62kjy"]
-size = Vector2(432.5, 55)
 
 [node name="Node2D" type="Node2D" unique_id=2137997239]
 
@@ -95,102 +96,6 @@ offset_right = 1158.0
 offset_bottom = 648.0
 texture = ExtResource("2_qhy6t")
 
-[node name="Player" type="CharacterBody2D" parent="." unique_id=2054177801]
-script = ExtResource("2_05d0c")
-
-[node name="CollisionShape2D2" type="CollisionShape2D" parent="Player" unique_id=1096082645]
-position = Vector2(64, 430)
-shape = SubResource("RectangleShape2D_v2gey")
-
-[node name="Camera2D" type="Camera2D" parent="Player" unique_id=1708226540]
-limit_left = 0
-limit_top = 0
-limit_right = 3516
-limit_bottom = 648
-
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Player" unique_id=507520065]
-texture_filter = 1
-position = Vector2(33, 406)
-sprite_frames = SubResource("SpriteFrames_62kjy")
-animation = &"run"
-centered = false
-
-[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1868365660]
-texture_filter = 1
-texture = ExtResource("6_djtf0")
-centered = false
-
-[node name="TileMapLayer" type="TileMapLayer" parent="." unique_id=1817095967]
-tile_set = SubResource("TileSet_qhy6t")
-
-[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=589345713]
-
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D" unique_id=892442053]
-polygon = PackedVector2Array(377, 460, 1, 460, 1, 647, 378, 647)
-
-[node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="StaticBody2D" unique_id=1694707626]
-polygon = PackedVector2Array(441, 396, 442, 646, 631, 647, 629, 393)
-
-[node name="CollisionPolygon2D3" type="CollisionPolygon2D" parent="StaticBody2D" unique_id=309852715]
-polygon = PackedVector2Array(696, 396, 820, 396, 820, 329, 1010, 332, 1007, 649, 695, 646)
-
-[node name="CollisionPolygon2D4" type="CollisionPolygon2D" parent="StaticBody2D" unique_id=472830442]
-polygon = PackedVector2Array(1063, 332, 1065, 455, 1124, 457, 1126, 652, 1377, 647, 1378, 268, 1252, 270, 1252, 335, 1187, 332, 1187, 396, 1124, 398, 1126, 331)
-
-[node name="CollisionPolygon2D5" type="CollisionPolygon2D" parent="StaticBody2D" unique_id=1814303454]
-position = Vector2(-2, 4)
-polygon = PackedVector2Array(1264, 138, 1263, 203, 1502, 206, 1501, 138)
-
-[node name="CollisionPolygon2D6" type="CollisionPolygon2D" parent="StaticBody2D" unique_id=1705814048]
-polygon = PackedVector2Array(1126, 209, 1186, 209, 1186, 269, 1126, 269)
-
-[node name="CollisionPolygon2D7" type="CollisionPolygon2D" parent="StaticBody2D" unique_id=1089608355]
-polygon = PackedVector2Array(1565, 207, 1692, 207, 1693, 646, 1564, 645)
-
-[node name="CollisionPolygon2D8" type="CollisionPolygon2D" parent="StaticBody2D" unique_id=27368571]
-polygon = PackedVector2Array(1758, 646, 1944, 647, 1943, 594, 1881, 593, 1883, 421, 1944, 423, 1944, 143, 1754, 144)
-
-[node name="CollisionPolygon2D13" type="CollisionPolygon2D" parent="StaticBody2D" unique_id=1245039636]
-polygon = PackedVector2Array(2197, 217, 2258, 218, 2259, 172, 2195, 173)
-
-[node name="CollisionPolygon2D9" type="CollisionPolygon2D" parent="StaticBody2D" unique_id=1530149578]
-polygon = PackedVector2Array(2008, -1, 2068, -2, 2071, 234, 2132, 233, 2133, 286, 2071, 283, 2070, 359, 2134, 361, 2134, 424, 2008, 423)
-
-[node name="CollisionPolygon2D10" type="CollisionPolygon2D" parent="StaticBody2D" unique_id=1466928481]
-polygon = PackedVector2Array(2006, 645, 2136, 647, 2134, 585, 2198, 585, 2198, 523, 2262, 522, 2260, 457, 2196, 457, 2197, 525, 2010, 522)
-
-[node name="CollisionPolygon2D11" type="CollisionPolygon2D" parent="StaticBody2D" unique_id=1548627931]
-polygon = PackedVector2Array(2322, 648, 2450, 649, 2448, 424, 2512, 423, 2514, 234, 2703, 233, 2702, 297, 2761, 297, 2761, 234, 2704, 232, 2702, 67, 2638, 65, 2637, 108, 2572, 107, 2574, 170, 2448, 172, 2451, 112, 2322, 111)
-
-[node name="CollisionPolygon2D12" type="CollisionPolygon2D" parent="StaticBody2D" unique_id=726613889]
-polygon = PackedVector2Array(2196, 296, 2257, 296, 2257, 350, 2196, 350)
-
-[node name="CollisionPolygon2D15" type="CollisionPolygon2D" parent="StaticBody2D" unique_id=372116394]
-position = Vector2(0, -6)
-polygon = PackedVector2Array(3194, 404, 3016, 404, 3016, 362, 3196, 363)
-
-[node name="CollisionPolygon2D16" type="CollisionPolygon2D" parent="StaticBody2D" unique_id=859580202]
-polygon = PackedVector2Array(2827, 359, 2953, 359, 2952, 298, 3016, 297, 3013, 173, 3079, 172, 3079, 109, 3014, 108, 3016, 3, 2953, 5, 2954, 109, 3011, 110, 3014, 171, 2952, 173, 2951, 298, 2824, 297)
-
-[node name="CollisionPolygon2D17" type="CollisionPolygon2D" parent="StaticBody2D" unique_id=144618001]
-polygon = PackedVector2Array(2763, 109, 2889, 109, 2890, 168, 2767, 168)
-
-[node name="CollisionPolygon2D14" type="CollisionPolygon2D" parent="StaticBody2D" unique_id=548098849]
-polygon = PackedVector2Array(2633, 644, 2572, 647, 2577, 359, 2637, 358)
-
-[node name="CollisionPolygon2D18" type="CollisionPolygon2D" parent="StaticBody2D" unique_id=1836639880]
-polygon = PackedVector2Array(2704, 358, 2760, 358, 2764, 416, 2951, 423, 2951, 646, 2700, 642)
-
-[node name="CollisionPolygon2D19" type="CollisionPolygon2D" parent="StaticBody2D" unique_id=1755896941]
-polygon = PackedVector2Array(3017, 646, 3456, 644, 3456, 234, 3330, 234, 3328, 291, 3271, 298, 3271, 342, 3331, 344, 3331, 421, 3268, 421, 3264, 455, 3204, 457, 3203, 524, 3143, 522, 3143, 587, 3021, 587)
-
-[node name="Worldboundary" type="Area2D" parent="." unique_id=347052659]
-script = ExtResource("7_tv86p")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Worldboundary" unique_id=2080542305]
-position = Vector2(1547, 652)
-shape = SubResource("RectangleShape2D_ahet1")
-
 [node name="Area2D" type="Area2D" parent="." unique_id=1702940676 node_paths=PackedStringArray("win_screen")]
 script = ExtResource("11_r3xjt")
 win_screen = NodePath("../WinScreen")
@@ -204,6 +109,45 @@ position = Vector2(3485, 167)
 texture = ExtResource("12_kupnr")
 script = ExtResource("13_7dp4h")
 bob_speed = 0.8
+
+[node name="Player" type="CharacterBody2D" parent="." unique_id=2054177801]
+script = ExtResource("2_05d0c")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Player" unique_id=1096082645]
+position = Vector2(64, 434)
+shape = SubResource("RectangleShape2D_v2gey")
+
+[node name="Camera2D" type="Camera2D" parent="Player" unique_id=1708226540]
+limit_left = 0
+limit_top = 0
+limit_right = 3516
+limit_bottom = 648
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Player" unique_id=507520065]
+texture_filter = 1
+position = Vector2(34, 407)
+sprite_frames = SubResource("SpriteFrames_62kjy")
+animation = &"run"
+centered = false
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1868365660]
+texture_filter = 1
+texture = ExtResource("6_djtf0")
+centered = false
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Sprite2D" unique_id=147819645 node_paths=PackedStringArray("level_sprite")]
+script = ExtResource("13_pbexi")
+level_sprite = NodePath("..")
+
+[node name="TileMapLayer" type="TileMapLayer" parent="." unique_id=1817095967]
+tile_set = SubResource("TileSet_qhy6t")
+
+[node name="Worldboundary" type="Area2D" parent="." unique_id=347052659]
+script = ExtResource("10_7dp4h")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Worldboundary" unique_id=2080542305]
+position = Vector2(1547, 667)
+shape = SubResource("RectangleShape2D_ahet1")
 
 [node name="WinScreen" type="CanvasLayer" parent="." unique_id=2086272736]
 visible = false
@@ -235,5 +179,5 @@ text = "Congratulations! Thank you for playing the demo"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[connection signal="body_entered" from="Worldboundary" to="Worldboundary" method="_on_body_entered"]
 [connection signal="body_entered" from="Area2D" to="Area2D" method="_on_body_entered"]
+[connection signal="body_entered" from="Worldboundary" to="Worldboundary" method="_on_body_entered"]
