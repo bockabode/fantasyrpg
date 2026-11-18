@@ -22,7 +22,7 @@ size = Vector2(17, 622)
 size = Vector2(432.5, 55)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_v2gey"]
-size = Vector2(59.25, 50)
+size = Vector2(62, 44)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_62kjy"]
 animations = [{
@@ -114,7 +114,7 @@ bob_speed = 0.8
 script = ExtResource("2_05d0c")
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="Player" unique_id=1096082645]
-position = Vector2(64, 434)
+position = Vector2(64, 437)
 shape = SubResource("RectangleShape2D_v2gey")
 
 [node name="Camera2D" type="Camera2D" parent="Player" unique_id=1708226540]
